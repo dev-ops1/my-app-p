@@ -1,0 +1,8 @@
+node{
+  stage('scm checkout'){
+    git' https://github.com/dev-ops1/my-app-p'
+    }
+  stage('maven package'){
+   def  MvnHome = tool name: 'maven-3', type: 'maven'
+   sh '"${MvnHome}"/bin/mvn clean package'
+   }
